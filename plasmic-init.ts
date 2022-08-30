@@ -1,5 +1,6 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import { HelloWorld } from "./components/HelloWorld";
+import { Hero } from "./components/Hero";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -31,5 +32,14 @@ PLASMIC.registerComponent(HelloWorld, {
     heading: "string",
     description: "string",
     test: "string",
+  },
+});
+
+PLASMIC.registerComponent(Hero, {
+  name: "Hero",
+  props: {
+    // Simple scalar props
+    tagline: "string",
+    description: "string",
   },
 });

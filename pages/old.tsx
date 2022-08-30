@@ -36,7 +36,12 @@ export default function PlasmicLoaderPage(props: {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { catchall } = context.params ?? {};
-  const plasmicPath = typeof catchall === 'string' ? catchall : Array.isArray(catchall) ? `/${catchall.join('/')}` : '/';
+  const plasmicPath =
+    typeof catchall === "string"
+      ? catchall
+      : Array.isArray(catchall)
+      ? `/${catchall.join("/")}`
+      : "/";
   const plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
   if (!plasmicData) {
     // non-Plasmic catch-all
@@ -55,7 +60,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   );
   // Use revalidate if you want incremental static regeneration
   return { props: { plasmicData, queryCache }, revalidate: 60 };
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const pageModules = await PLASMIC.fetchPages();
@@ -67,4 +72,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
     })),
     fallback: "blocking",
   };
-}
+};
