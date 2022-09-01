@@ -62,7 +62,7 @@ export function Hero({
               <Button href="#" color="yellow" className="">
                 CTA1
               </Button>
-              <Button variant="outline" color="yellow" className="">
+              <Button href="#" variant="outline" color="yellow" className="">
                 CTA2
               </Button>
             </div>

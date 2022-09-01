@@ -1,6 +1,10 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import { HelloWorld } from "./components/HelloWorld";
 import { Hero } from "./components/Hero";
+import { Team } from "./components/Team";
+import { TeamMember } from "./components/TeamMember";
+import { FAQs } from "./components/FAQs";
+import { FAQ } from "./components/FAQ";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -38,8 +42,79 @@ PLASMIC.registerComponent(HelloWorld, {
 PLASMIC.registerComponent(Hero, {
   name: "Hero",
   props: {
-    // Simple scalar props
     tagline: "string",
     description: "string",
+  },
+});
+
+PLASMIC.registerComponent(Team, {
+  name: "Team",
+  props: {
+    heading: "string",
+    description: "string",
+    children: {
+      type: "slot",
+      allowedComponents: ["TeamMember"],
+      defaultValue: [
+        {
+          type: 'component',
+          name: 'TeamMember',
+          props: {
+            name: 'Taimur',
+            role: 'Senior Designer',
+            imageUrl:
+              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+          }
+        },
+        {
+          type: 'component',
+          name: 'TeamMember',
+          props: {
+            name: 'Benny',
+            role: 'Senior Designer',
+            imageUrl:
+              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+          }
+        }
+      ]
+    }
+  },
+});
+
+PLASMIC.registerComponent(TeamMember, {
+  name: "TeamMember",
+  props: {
+    name: "string",
+    imageUrl: "string",
+    role: "string",
+  },
+});
+
+PLASMIC.registerComponent(FAQs, {
+  name: "FAQs",
+  props: {
+    children: {
+      type: "slot",
+      allowedComponents: ["FAQ"],
+      defaultValue: [
+        {
+          type: 'component',
+          name: 'FAQ',
+          props: {
+            question: "What's the best thing about Switzerland?",
+            answer:
+              "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+          }
+        },
+      ]
+    }
+  },
+});
+
+PLASMIC.registerComponent(FAQ, {
+  name: "FAQ",
+  props: {
+    question: "string",
+    answer: "string",
   },
 });
