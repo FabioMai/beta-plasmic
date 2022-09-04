@@ -7,11 +7,20 @@ import { FAQs } from "./components/FAQs";
 import { FAQ } from "./components/FAQ";
 
 export const PLASMIC = initPlasmicLoader({
+  // DEV environment
+  // projects: [
+  //   {
+  //     id: "sTUmRh2NoLQX9kP6f8Xowd",
+  //     token:
+  //       "WrtAualkJjuzrtW4lT682bw4ZHj9C5aZW4c05A6JHDxdsRyXsFDlr9irwF04XFql5kh8vyXpzJwUYkw5VkfA",
+  //   },
+  // ],
+  // PROD environment
   projects: [
     {
-      id: "sTUmRh2NoLQX9kP6f8Xowd",
+      id: "xtaMrDhZRWf5hrCyRjT8NX",
       token:
-        "WrtAualkJjuzrtW4lT682bw4ZHj9C5aZW4c05A6JHDxdsRyXsFDlr9irwF04XFql5kh8vyXpzJwUYkw5VkfA",
+        "XVTqvR7pxy29DxC7pc9agKytIFVbgOySZV2sM5zNrLKbcMAQcBpAqpHMknISJaf4xvnHHa3Elx6SIDqRoNg",
     },
   ],
 
@@ -57,27 +66,27 @@ PLASMIC.registerComponent(Team, {
       allowedComponents: ["TeamMember"],
       defaultValue: [
         {
-          type: 'component',
-          name: 'TeamMember',
+          type: "component",
+          name: "TeamMember",
           props: {
-            name: 'Taimur',
-            role: 'Senior Designer',
+            name: "Taimur",
+            role: "Senior Designer",
             imageUrl:
-              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-          }
+              "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+          },
         },
         {
-          type: 'component',
-          name: 'TeamMember',
+          type: "component",
+          name: "TeamMember",
           props: {
-            name: 'Benny',
-            role: 'Senior Designer',
+            name: "Benny",
+            role: "Senior Designer",
             imageUrl:
-              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-          }
-        }
-      ]
-    }
+              "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+          },
+        },
+      ],
+    },
   },
 });
 
@@ -98,16 +107,16 @@ PLASMIC.registerComponent(FAQs, {
       allowedComponents: ["FAQ"],
       defaultValue: [
         {
-          type: 'component',
-          name: 'FAQ',
+          type: "component",
+          name: "FAQ",
           props: {
             question: "What's the best thing about Switzerland?",
             answer:
               "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-          }
+          },
         },
-      ]
-    }
+      ],
+    },
   },
 });
 
