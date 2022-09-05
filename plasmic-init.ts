@@ -8,27 +8,27 @@ import { FAQ } from "./components/FAQ";
 
 export const PLASMIC = initPlasmicLoader({
   // DEV environment
-  // projects: [
-  //   {
-  //     id: "sTUmRh2NoLQX9kP6f8Xowd",
-  //     token:
-  //       "WrtAualkJjuzrtW4lT682bw4ZHj9C5aZW4c05A6JHDxdsRyXsFDlr9irwF04XFql5kh8vyXpzJwUYkw5VkfA",
-  //   },
-  // ],
-  // PROD environment
   projects: [
     {
-      id: "xtaMrDhZRWf5hrCyRjT8NX",
+      id: "sTUmRh2NoLQX9kP6f8Xowd",
       token:
-        "XVTqvR7pxy29DxC7pc9agKytIFVbgOySZV2sM5zNrLKbcMAQcBpAqpHMknISJaf4xvnHHa3Elx6SIDqRoNg",
+        "WrtAualkJjuzrtW4lT682bw4ZHj9C5aZW4c05A6JHDxdsRyXsFDlr9irwF04XFql5kh8vyXpzJwUYkw5VkfA",
     },
   ],
+  // PROD environment
+  // projects: [
+  //   {
+  //     id: "xtaMrDhZRWf5hrCyRjT8NX",
+  //     token:
+  //       "XVTqvR7pxy29DxC7pc9agKytIFVbgOySZV2sM5zNrLKbcMAQcBpAqpHMknISJaf4xvnHHa3Elx6SIDqRoNg",
+  //   },
+  // ],
 
   // By default Plasmic will use the last published version of your project.
   // For development, you can set preview to true, which will use the unpublished
   // project, allowing you to see your designs without publishing.  Please
   // only use this for development, as this is significantly slower.
-  preview: false,
+  preview: true,
 });
 
 // You can register any code components that you want to use here; see
